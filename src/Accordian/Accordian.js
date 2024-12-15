@@ -8,7 +8,6 @@ import Animated, {
 } from 'react-native-reanimated';
 
 const AccordianItem = ({isExpanded}) => {
-  console.log('Expanded', isExpanded);
   const height = useSharedValue(0);
   const derivedHeight = useDerivedValue(() => {
     withTiming(height.value * Number(isExpanded.value), {
@@ -21,7 +20,7 @@ const AccordianItem = ({isExpanded}) => {
     };
   });
   return (
-    <Animated.View style={rStyle}>
+    <Animated.View style={[{width: '100%', overflow: 'hidden'}, rStyle]}>
       <View
         onLayout={e => {
           height.value = e.nativeEvent.layout.height;
@@ -29,7 +28,7 @@ const AccordianItem = ({isExpanded}) => {
         style={[
           {
             position: 'absolute',
-            top: 10,
+            top: 0,
             width: '100%',
             //   backgroundColor: 'blue',
           },

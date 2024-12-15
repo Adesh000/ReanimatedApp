@@ -10,12 +10,13 @@ import ScrollviewAnimation from './src/scrollAnimation/ScrollviewAnimation';
 import PinchGesture from './src/PinchGesture';
 import BottomModal from './src/BottomSheetModal/BottomModal';
 import Accordian from './src/Accordian/Accordian';
+import Spinner from './src/Spinner';
 
 function App() {
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <View style={styles.mainContainer}>
-        {/* <Intro /> */}
+        <Intro />
         {/* <PanGesture /> */}
         {/* <Stopwatch /> */}
         {/* <Fetch /> */}
@@ -23,7 +24,8 @@ function App() {
         {/* <InterpolateColors /> */}
         {/* <PinchGesture /> */}
         {/* <BottomModal /> */}
-        <Accordian />
+        {/* <Accordian /> */}
+        {/* <Spinner /> */}
       </View>
     </GestureHandlerRootView>
   );
