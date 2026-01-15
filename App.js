@@ -12,7 +12,6 @@ import BottomModal from './src/BottomSheetModal/BottomModal';
 import Accordian from './src/Accordian/Accordian';
 import Spinner from './src/Spinner';
 import {NavigationContainer} from '@react-navigation/native';
-import {create} from 'react-test-renderer';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
 const Drawer = createDrawerNavigator();
