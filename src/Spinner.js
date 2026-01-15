@@ -6,9 +6,10 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import React from 'react';
+import Svg, {Circle} from 'react-native-svg';
 
 const Spinner = () => {
-  const progress = useSharedValue(10);
+  const progress = useSharedValue(0);
   console.log('Progress', progress);
   const animatedStyle = useAnimatedStyle(() => ({
     width: withTiming(progress.value, 500),
@@ -29,6 +30,9 @@ const Spinner = () => {
           ]}></Animated.View>
       </Animated.View>
       <Animated.View style={styles.container}></Animated.View>
+      {/* <Svg height={100} width={100} viewBox="0 0 100 100">
+        <Circle cx={'50'} cy={'50'} r={50} fill={'red'} />
+      </Svg> */}
     </View>
   );
 };

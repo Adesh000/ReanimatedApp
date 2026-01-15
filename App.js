@@ -11,23 +11,36 @@ import PinchGesture from './src/PinchGesture';
 import BottomModal from './src/BottomSheetModal/BottomModal';
 import Accordian from './src/Accordian/Accordian';
 import Spinner from './src/Spinner';
+import {NavigationContainer} from '@react-navigation/native';
+import {create} from 'react-test-renderer';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+
+const Drawer = createDrawerNavigator();
 
 function App() {
   return (
-    <GestureHandlerRootView style={{flex: 1}}>
-      <View style={styles.mainContainer}>
-        <Intro />
-        {/* <PanGesture /> */}
-        {/* <Stopwatch /> */}
-        {/* <Fetch /> */}
-        {/* <ScrollviewAnimation /> */}
-        {/* <InterpolateColors /> */}
-        {/* <PinchGesture /> */}
-        {/* <BottomModal /> */}
-        {/* <Accordian /> */}
-        {/* <Spinner /> */}
-      </View>
-    </GestureHandlerRootView>
+    <NavigationContainer>
+      <GestureHandlerRootView style={{flex: 1}}>
+        <Drawer.Navigator>
+          <Drawer.Screen name="Intro" component={Intro} />
+          <Drawer.Screen name="PanGesture" component={PanGesture} />
+          <Drawer.Screen name="Stopwatch" component={Stopwatch} />
+          <Drawer.Screen name="Fetch" component={Fetch} />
+          <Drawer.Screen
+            name="ScrollviewAnimation"
+            component={ScrollviewAnimation}
+          />
+          <Drawer.Screen
+            name="InterpolateColors"
+            component={InterpolateColors}
+          />
+          <Drawer.Screen name="PintchGesture" component={PinchGesture} />
+          <Drawer.Screen name="BottomModal" component={BottomModal} />
+          <Drawer.Screen name="Accordian" component={Accordian} />
+          <Drawer.Screen name="Spinner" component={Spinner} />
+        </Drawer.Navigator>
+      </GestureHandlerRootView>
+    </NavigationContainer>
   );
 }
 
